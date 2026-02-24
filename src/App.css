@@ -342,6 +342,14 @@
 }
 
 @media (max-width: 768px) {
+  .menu-panel {
+    max-height: calc(100dvh - 78px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
   .glass-panel {
     border-radius: 20px;
   }
