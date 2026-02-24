@@ -332,7 +332,7 @@ function App() {
     }
 
     void releaseWakeLock()
-  }, [isFullscreen])
+  }, [isFullscreen, releaseWakeLock, requestWakeLock])
 
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -901,5 +901,8 @@ function App() {
 }
 
 export default App
+
+
+
 
 
