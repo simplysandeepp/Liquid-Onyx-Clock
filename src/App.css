@@ -170,7 +170,7 @@
   bottom: max(1rem, env(safe-area-inset-bottom));
   margin: 0;
   z-index: 20;
-  font-size: clamp(0.88rem, 1.58vw, 1.72rem);
+  font-size: clamp(0.84rem, 1.5vw, 1.62rem);
   letter-spacing: 0.08em;
   color: color-mix(in srgb, var(--text-primary) 72%, #d6b49d 28%);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
@@ -330,7 +330,7 @@
   }
 
   .quote-tagline {
-    font-size: clamp(0.8rem, 3.05vw, 1.12rem);
+    font-size: clamp(0.76rem, 2.9vw, 1.04rem);
     letter-spacing: 0.05em;
   }
 }
