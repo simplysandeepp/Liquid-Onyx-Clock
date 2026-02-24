@@ -74,13 +74,13 @@ Stored in `localStorage`:
 
 ## Glimpse
 
-<img width="1919" height="1084" alt="image" src="https://github.com/user-attachments/assets/8713a25c-f3c6-44a5-b53b-0d7b4e11a948" />
-<img width="1919" height="1081" alt="image" src="https://github.com/user-attachments/assets/9375b2b3-f2a1-4e67-a0cf-f990366445b5" />
-<img width="1919" height="1086" alt="image" src="https://github.com/user-attachments/assets/e033afa4-9b58-4cda-b4fb-e527a4f08ecb" />
-<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/e32da709-e404-47c9-9104-9e970820cc7e" />
-<img width="1919" height="1084" alt="image" src="https://github.com/user-attachments/assets/c39f6a56-5381-4a1e-889b-e2a03d79212a" />
-<img width="1911" height="1086" alt="image" src="https://github.com/user-attachments/assets/59f4ce4f-e62f-495e-8635-a52b2dca8ae7" />
-<img width="561" height="945" alt="image" src="https://github.com/user-attachments/assets/57bf1c06-ca26-4a02-b7f2-5245692fb828" />
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/8713a25c-f3c6-44a5-b53b-0d7b4e11a948" />
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/9375b2b3-f2a1-4e67-a0cf-f990366445b5" />
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/e033afa4-9b58-4cda-b4fb-e527a4f08ecb" />
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/e32da709-e404-47c9-9104-9e970820cc7e" />
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/c39f6a56-5381-4a1e-889b-e2a03d79212a" />
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/59f4ce4f-e62f-495e-8635-a52b2dca8ae7" />
+<img width="320" alt="image" src="https://github.com/user-attachments/assets/57bf1c06-ca26-4a02-b7f2-5245692fb828" />
 
 ## Found a Bug? Please Create an Issue
 
@@ -100,4 +100,4 @@ Thank you. Hope you like this project.
 
 Private project.
 
-<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500">
+<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="380">
