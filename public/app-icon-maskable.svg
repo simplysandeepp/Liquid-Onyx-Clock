@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mask-bg" x1="64" y1="40" x2="448" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141414"/>
+      <stop offset="1" stop-color="#020202"/>
+    </linearGradient>
+    <radialGradient id="mask-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(282 170) rotate(117.307) scale(304.087)">
+      <stop stop-color="#A1AEDA" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#A1AEDA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#mask-bg)"/>
+  <rect width="512" height="512" fill="url(#mask-glow)"/>
+  <circle cx="256" cy="256" r="172" fill="#080808" fill-opacity="0.72"/>
+  <circle cx="256" cy="256" r="171.5" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <circle cx="256" cy="256" r="96" stroke="#F5F7FA" stroke-opacity="0.66" stroke-width="20"/>
+  <path d="M256 186V262L314 304" stroke="#F5F7FA" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
