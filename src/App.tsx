@@ -23,6 +23,7 @@ interface WakeLockSentinelLike extends EventTarget {
 
 const STORAGE_KEYS = {
   theme: 'liquid-onyx-theme',
+  clock24Hour: 'liquid-onyx-clock-24-hour',
   recentDurations: 'liquid-onyx-recent-durations',
   lapHistory: 'liquid-onyx-lap-history',
 } as const
@@ -154,6 +155,7 @@ async function playTimerAlert(): Promise<void> {
 function App() {
   const [mode, setMode] = useState<ViewMode>('clock')
   const [theme, setTheme] = useState<ThemeId>(() => readStorage(STORAGE_KEYS.theme, 'onyx'))
+  const [clock24Hour, setClock24Hour] = useState<boolean>(() => readStorage(STORAGE_KEYS.clock24Hour, false))
   const [now, setNow] = useState(() => new Date())
   const [menuOpen, setMenuOpen] = useState(false)
   const [idle, setIdle] = useState(false)
@@ -234,6 +236,10 @@ function App() {
   useEffect(() => {
     writeStorage(STORAGE_KEYS.theme, theme)
   }, [theme])
+
+  useEffect(() => {
+    writeStorage(STORAGE_KEYS.clock24Hour, clock24Hour)
+  }, [clock24Hour])
 
   useEffect(() => {
     writeStorage(STORAGE_KEYS.recentDurations, recentDurations)
@@ -589,6 +595,7 @@ function App() {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
+    hour12: !clock24Hour,
   })
 
   const clockDate = now.toLocaleDateString([], {
@@ -808,6 +815,26 @@ function App() {
                   {view[0].toUpperCase() + view.slice(1)}
                 </button>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <p className="menu-heading">Clock Format</p>
+            <div className="mt-2 flex gap-2">
+              <button
+                type="button"
+                className={`ghost-button ${!clock24Hour ? 'active' : ''}`}
+                onClick={() => setClock24Hour(false)}
+              >
+                12h
+              </button>
+              <button
+                type="button"
+                className={`ghost-button ${clock24Hour ? 'active' : ''}`}
+                onClick={() => setClock24Hour(true)}
+              >
+                24h
+              </button>
             </div>
           </div>
 
