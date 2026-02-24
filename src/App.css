@@ -196,8 +196,8 @@
 }
 
 .icon-button {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 999px;
   border: 1px solid var(--glass-border);
   background: rgba(0, 0, 0, 0.45);
@@ -212,7 +212,7 @@
 }
 
 .icon-button span {
-  width: 20px;
+  width: 18px;
   height: 2px;
   background: var(--text-primary);
   border-radius: 999px;
