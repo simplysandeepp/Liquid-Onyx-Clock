@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+﻿import { useCallback, useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import './App.css'
 
@@ -184,7 +184,7 @@ function App() {
     window.matchMedia('(display-mode: standalone)').matches
     || Boolean((window.navigator as Navigator & { standalone?: boolean }).standalone)
 
-  const releaseWakeLock = async () => {
+  const releaseWakeLock = useCallback(async () => {
     if (!wakeLockRef.current) {
       return
     }
@@ -196,9 +196,9 @@ function App() {
     } finally {
       wakeLockRef.current = null
     }
-  }
+  }, [])
 
-  const requestWakeLock = async () => {
+  const requestWakeLock = useCallback(async () => {
     const wakeLockApi = 'wakeLock' in navigator
       ? (navigator as Navigator & {
           wakeLock?: { request: (type: 'screen') => Promise<WakeLockSentinelLike> }
@@ -221,7 +221,7 @@ function App() {
     } catch {
       // Wake lock can be blocked by OS/browser policy.
     }
-  }
+  }, [isFullscreen])
 
   useEffect(() => {
     const timeInterval = window.setInterval(() => {
@@ -345,13 +345,13 @@ function App() {
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
-  }, [isFullscreen])
+  }, [isFullscreen, requestWakeLock])
 
   useEffect(() => {
     return () => {
       void releaseWakeLock()
     }
-  }, [])
+  }, [releaseWakeLock])
 
   useEffect(() => {
     if (!timerRunning) {
@@ -620,7 +620,13 @@ function App() {
 
   const renderTimer = () => (
     <div className="glass-panel panel-shell w-full max-w-5xl px-6 py-10 sm:px-10 sm:py-12">
-      <h2 className="text-7xl font-semibold tracking-[0.1em] sm:text-8xl lg:text-9xl">
+      <h2
+        className={`font-semibold tracking-[0.1em] transition-all duration-300 ${
+          timerRunning
+            ? 'text-8xl sm:text-9xl lg:text-[11rem]'
+            : 'text-7xl sm:text-8xl lg:text-9xl'
+        }`}
+      >
         {formatCountdown(timerDisplaySeconds)}
       </h2>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -686,7 +692,13 @@ function App() {
 
   const renderStopwatch = () => (
     <div className="glass-panel panel-shell w-full max-w-5xl px-6 py-10 sm:px-10 sm:py-12">
-      <h2 className="text-6xl font-semibold tracking-[0.08em] sm:text-7xl lg:text-8xl">
+      <h2
+        className={`font-semibold tracking-[0.08em] transition-all duration-300 ${
+          stopwatchRunning
+            ? 'text-7xl sm:text-8xl lg:text-9xl'
+            : 'text-6xl sm:text-7xl lg:text-8xl'
+        }`}
+      >
         {formatStopwatch(stopwatchElapsedMs)}
       </h2>
 
@@ -858,15 +870,17 @@ function App() {
             </p>
           ) : null}
 
-          <div className="mt-6 flex justify-end border-t border-white/10 pt-4">
-            <a
-              className="tiny-link-button"
-              href="https://www.linkedin.com/in/simplysandeepp/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Meet the Mind Behind This Experience
-            </a>
+          <div className="mt-6 border-t border-white/10 pt-4">
+            <div className="flex flex-wrap justify-end gap-2">
+              <a
+                className="tiny-link-button"
+                href="https://www.linkedin.com/in/simplysandeepp/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Meet the Mind Behind This Experience
+              </a>
+            </div>
           </div>
         </aside>
       </div>
@@ -887,3 +901,5 @@ function App() {
 }
 
 export default App
+
+
