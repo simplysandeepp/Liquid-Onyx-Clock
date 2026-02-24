@@ -679,21 +679,6 @@ function App() {
             </button>
           </form>
 
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.24em] text-[color:var(--text-muted)]">Recent</p>
-            <div className="flex flex-wrap gap-3">
-              {recentDurations.map((seconds) => (
-                <button
-                  key={`recent-${seconds}`}
-                  type="button"
-                  className="ghost-button"
-                  onClick={() => applyTimerDuration(seconds)}
-                >
-                  {getTimerPresetLabel(seconds)}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       ) : null}
     </div>
@@ -872,6 +857,17 @@ function App() {
               On iPhone/iPad: use Share and select Add to Home Screen.
             </p>
           ) : null}
+
+          <div className="mt-6 flex justify-end border-t border-white/10 pt-4">
+            <a
+              className="tiny-link-button"
+              href="https://www.linkedin.com/in/simplysandeepp/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Meet the Mind Behind This Experience
+            </a>
+          </div>
         </aside>
       </div>
 
